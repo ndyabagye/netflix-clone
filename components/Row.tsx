@@ -2,10 +2,11 @@ import {useRef, useState} from 'react';
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline"
 import { Movie } from "../typings"
 import Thumbnail from "./Thumbnail"
+import { DocumentData } from 'firebase/firestore';
 
 interface Props {
     title: string,
-    movies: Movie[]
+    movies: Movie[] | DocumentData[]
 }
 function Row({ title, movies }: Props) {
     const rowRef = useRef<HTMLDivElement>(null);
